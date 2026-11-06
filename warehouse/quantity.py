@@ -2,4 +2,8 @@
 
 
 def parse_quantity(value: str) -> int:
-    return int(value.strip())
+    """Parse a nonnegative integer quantity, raising ValueError if invalid."""
+    quantity = int(value.strip())
+    if quantity < 0:
+        raise ValueError("Quantity must be nonnegative")
+    return quantity
